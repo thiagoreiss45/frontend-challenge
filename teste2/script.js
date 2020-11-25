@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // CHANGE ONLY THIS
-    const SLIDETIME = 500; //ms
-    // --------------------------
+    const SLIDETIME = 500; 
   
     const backButton = document.querySelector('.wbn-slider-back-btn');
     const forwardButton = document.querySelector('.wbn-slider-next-btn');
@@ -13,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let newActive = null;
   
     function initSlider() {
-      // Set the CSS transition on the slides to the value we specified in SLIDETIME above
+      // Set the CSS transition on the slides to the value specified in SLIDETIME above
       allSlides.forEach(slide =>
         slide.setAttribute(
           'style',
@@ -30,18 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const activeSlideIndex = allSlides.indexOf(active);
   
         if (forward) {
-         /*  console.log('activeSlideIndex: ', activeSlideIndex);
-          console.log('allSlides.length: ', allSlides.length);
-          console.log('new slide: ', (activeSlideIndex + 1) % allSlides.length); */
-  
           newActive = allSlides[(activeSlideIndex + 1) % allSlides.length];
           active.classList.add('slideOutLeft');
           newActive.classList.add('slideInRight', 'active');
         } else {
-          /* console.log('activeSlideIndex: ', activeSlideIndex);
-          console.log('allSlides.length: ', allSlides.length);
-          console.log('new slide: ', (activeSlideIndex - 1 + allSlides.length) % allSlides.length); */
-  
           newActive =
             allSlides[
               (activeSlideIndex - 1 + allSlides.length) % allSlides.length
